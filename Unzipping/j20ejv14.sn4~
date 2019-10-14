@@ -1,0 +1,49 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO.Compression;
+
+namespace Unzipping
+{
+    public partial class Form1 : Form
+    {
+
+        public string ourFile;
+        string extractPath = @"F:\Programming\C# Projects\Unzipping\extract";
+
+        public void A()
+        {
+            Directory.CreateDirectory(extractPath);
+            //ZipFile.ExtractToDirectory(ourFile, extractPath);
+        }
+
+        public void B()
+        {
+
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void toolStripOpenFile_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            ourFile = openFileDialog1.FileName;
+            MessageBox.Show(ourFile);
+        }
+
+        private void btUnzipCSV_Click(object sender, EventArgs e)
+        {
+            this.A();
+        }
+    }
+}
